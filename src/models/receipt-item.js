@@ -5,6 +5,26 @@ class ReceiptItem {
     this.saved = saved;
   }
 
+  getBrcode() {
+    return this.cartItem.getBarcode();
+  }
+
+  getName() {
+    return this.cartItem.getName();
+  }
+
+  getUnit() {
+    return this.cartItem.getUnit();
+  }
+
+  getPrice() {
+    return this.cartItem.getPrice();
+  }
+
+  getCount() {
+    return this.cartItem.count;
+  }
+  
   static buildReceiptItems(cartItems, allPromotions) {
     const discount = (count, price, promotionType)=> {
       let subtotal = count * price;
