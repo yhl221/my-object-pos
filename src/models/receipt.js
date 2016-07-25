@@ -6,4 +6,4 @@ class Receipt {
   }
 }
 
-modelu.exports = Receipt;
+module.exports = Receipt;
