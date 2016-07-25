@@ -1,8 +1,8 @@
-class Promotion{
-    constructor(type,barcodes){
-        this.type=type;
-        this.barcodes = barcodes;
-    }
+class Promotion {
+  constructor(type, barcodes) {
+    this.type = type;
+    this.barcodes = barcodes;
+  }
 }
 
-module.exports=Promotion;
+module.exports = Promotion;
