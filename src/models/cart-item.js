@@ -1,4 +1,5 @@
 class CartItem {
+
   constructor(item, count) {
     this.item = item;
     this.count = count;
@@ -19,6 +20,10 @@ class CartItem {
     return this.item.price;
   }
 
+  getSubtotal(){
+    return this.item.price * this.count;
+  }
+  
   static buildCartItems(tags, allItems) {
 
     const cartItems = [];
