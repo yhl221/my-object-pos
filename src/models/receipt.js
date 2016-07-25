@@ -1,13 +1,6 @@
 class Receipt {
 
-  constructor(receiptItems, total, savedTotal) {
-    this.receiptItems = receiptItems;
-    this.total = total;
-    this.savedTotal = savedTotal;
-  }
-
-  static  buildReceipt(receiptItems) {
-
+  constructor(receiptItems = []) {
     let total = 0;
     let savedTotal = 0;
 
@@ -15,19 +8,18 @@ class Receipt {
       total += receiptItem.subtotal;
       savedTotal += receiptItem.saved;
     }
-
-    return new Receipt(receiptItems, total, savedTotal);
+    this.receiptItems = receiptItems;
+    this.total = total;
+    this.savedTotal = savedTotal;
   }
 
-
-  static buildReceiptText() {
+   buildReceiptText() {
 
     const formatMoney = (money)=> {
       return money.toFixed(2);
     };
 
-    let receiptItemsText = this.receiptItems
-      .map(receiptItem => {
+    let receiptItemsText = this.receiptItems.map(receiptItem => {
         const cartItem = receiptItem.cartItem;
         return `名称：${cartItem.item.name}，\
 数量：${cartItem.count}${cartItem.item.unit}，\
@@ -43,7 +35,6 @@ ${receiptItemsText}
 节省：${formatMoney(this.savedTotal)}(元)
 **********************`;
   };
-
 }
 
-module.exports = Receipt;
+  module.exports = Receipt;
