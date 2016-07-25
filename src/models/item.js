@@ -5,7 +5,8 @@ class Item {
     this.unit = unit;
     this.price = price;
   }
-  static all(){
+
+  static all() {
     return [
       new Item('ITEM000000', '可口可乐', '瓶', 3.00),
       new Item('ITEM000001', '雪碧', '瓶', 3.00),

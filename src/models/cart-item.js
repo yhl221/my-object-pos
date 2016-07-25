@@ -4,23 +4,24 @@ class CartItem {
     this.item = item;
     this.count = count;
   }
-  getBarcode(){
+
+  getBarcode() {
     return this.item.barcode;
   }
 
-  getName(){
+  getName() {
     return this.item.name;
   }
 
-  getUnit(){
+  getUnit() {
     return this.item.unit;
   }
 
-  getPrice(){
+  getPrice() {
     return this.item.price;
   }
 
-  getSubtotal(){
+  getSubtotal() {
     return this.item.price * this.count;
   }
   

@@ -10,9 +10,9 @@ function printReceipt(tags) {
 
   const receiptItems = ReceiptItem.buildReceiptItems(cartItems, Promotion.all());
 
-  const receipt=new Receipt(receiptItems);
+  const receipt = new Receipt(receiptItems);
 
-  const receiptText =receipt.buildReceiptText();
+  const receiptText = receipt.buildReceiptText();
 
   console.log(receiptText);
 }
