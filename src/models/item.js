@@ -1,3 +1,10 @@
-/**
- * Created by yhl on 16-7-25.
- */
+class Item{
+    constructor(barcode,name,unit,price){
+        this.barcode=barcode;
+        this.name = name;
+        this.unit = unit;
+        this.price = price;
+    }
+}
+
+module.exports=Item;
