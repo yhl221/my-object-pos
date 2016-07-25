@@ -1,7 +1,8 @@
 const fixture = require('./fixtures');
 const loadAllItems = fixture.loadAllItems;
 const loadPromotions = fixture.loadPromotions;
-const CartItem=require('./models/cart-item.js');
+const CartItem = require('./models/cart-item.js');
+const ReceiptItem = require('./models/receipt-item.js');
 
 function printReceipt(tags) {
 
@@ -34,7 +35,7 @@ function buildCartItems(tags, allItems) {
       cartItem.count += count;
     } else {
       const item = allItems.find(item => item.barcode === barcode);
-      cartItems.push(new CartItem(item,count));
+      cartItems.push(new CartItem(item, count));
     }
   }
 
@@ -48,8 +49,8 @@ function buildReceiptItems(cartItems, allPromotions) {
 
     const {saved, subtotal} = discount(cartItem.count, cartItem.item.price, promotionType);
 
-    return {cartItem, saved, subtotal};
-  });
+    return new ReceiptItem(cartItem, subtotal, saved);
+  })
 }
 
 function discount(count, price, promotionType) {
